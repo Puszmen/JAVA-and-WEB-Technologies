@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Formularz wypożyczalni samochodów</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Przykładowy formularz dla wypożyczalni samochodów">
+    </head>
+    <body>
+        <h1>Wypożycz samochód</h1>
+        <form>
+            <fieldset>
+                <legend>Dane wypożyczającego</legend>
+                <div>
+                    <label for="firstNameAndSecondName">Imię i naziwsko</label>
+                    <input type="text" id="firstNameAndSecondName">
+                </div>
+                <div>
+                    <label for="birthDate">Data urodzenia</label>
+                    <input type="date" id="birthDate">
+                </div>
+                <div>
+                    <label for="drivingLicenseNumber">Numer prawa jazdy</label>
+                    <input type="text" id="drivingLicenseNumber">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Dane kontaktowe</legend>
+                <div>
+                    <label for="emailAdress">Adres email</label>
+                    <input type="email" id="emailAdress" placeholder="john@example.com">
+                </div>
+                <div>
+                    <label for="phoneNumber">Telefon</label>
+                    <input type="tel" id="phoneNumber" placeholder="111222333">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Wybór samochodu</legend>
+                <select>
+                    <option>Opel Corsa</option>
+                    <option>Opel Astra</option>
+                    <option>Opel Insignia</option>
+                </select>
+                <div>
+                    <p>Dodatkowa nawigacja</p>
+                    <label for="navi-no">Nie</label>
+                    <input type="radio" name="navi" id="navi-no" checked>
+                    <label for="navi-yes">Tak</label>
+                    <input type="radio" name="navi" id="navi-yes">
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Okres wynajmu</legend>
+                <div>
+                    <label for="startDate">Początek wynajmu</label>
+                    <input type="date" id="startDate">
+                </div>
+                <div>
+                    <label for="rentalPlace">Miejsce odbioru</label>
+                    <select id="rentalPlace">
+                        <option>Lotnisko</option>
+                        <option>Dworzec PKP</option>
+                        <option>Dworzes PKS</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="returnDate">Data zwrotu</label>
+                    <input type="date" id="returnDate">
+                </div>
+                <div>
+                    <label for="returnPlace">Miejsce zwrotu</label>
+                    <select id="returnPlace">
+                        <option>Lotnisko</option>
+                        <option>Dworzec PKP</option>
+                        <option>Dworzes PKS</option>
+                    </select>
+                </div>
+                <p>* Odbioru i zwrotu należy dokonać w godzinach 6-22, opłata naliczana jest za pełne doby</p>
+            </fieldset>
+            <fieldset>
+                <legend>Dodatkowe uwagi</legend>
+                <div>
+                    <textarea cols="50" rows="10" placeholder="Jeżeli masz dodatkowe uwagi to wpisz je tutaj"></textarea>
+                </div>
+            </fieldset>
+            <button>Wypożycz</button>
+        </form>
+    </body>
+</html>
