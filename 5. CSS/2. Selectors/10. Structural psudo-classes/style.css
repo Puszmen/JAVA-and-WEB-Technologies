@@ -1,0 +1,16 @@
+p:first-of-type {
+    color: gray;
+    font-style: italic;
+}
+
+ul > li:nth-child(odd) {
+    background-color: lightgray;
+}
+
+p:only-child {
+    color: blue;
+}
+
+h2:only-of-type {
+    color: brown;
+}
