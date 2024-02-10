@@ -12,12 +12,6 @@ let add = calc.add(10, 5);
 console.log(add);
 calc.multiply(6, 6);
 
-
-
-
-
-
-
 let myObj = {
     a: "first",
     "b": "second",
