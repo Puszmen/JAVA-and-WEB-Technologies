@@ -16,7 +16,7 @@ public class LoginController extends HttpServlet {
             request.getSession().setAttribute("username", username);
             response.sendRedirect("admin");
         } else {
-            response.sendRedirect("error.html");
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
         }
     }
 }
