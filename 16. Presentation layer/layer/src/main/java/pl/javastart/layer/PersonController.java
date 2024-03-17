@@ -5,9 +5,15 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("")
 public class PersonController extends HttpServlet {
+    @Override
+    public void init() {
+        getServletContext().setAttribute("people", new ArrayList<Person>());
+    }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("home.jsp").forward(request, response);
@@ -18,8 +24,10 @@ public class PersonController extends HttpServlet {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         int age = Integer.parseInt(request.getParameter("age"));
-        Person person = new Person(firstName, lastName, age);
-        request.setAttribute("person", person);
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        Gender gender = Gender.valueOf(request.getParameter("gender"));
+        Person person = new Person(firstName, lastName, age, gender);
+        List<Person> peopleList = (List<Person>) getServletContext().getAttribute("people");
+        peopleList.add(person);
+        request.getRequestDispatcher("/home.jsp").forward(request, response);
     }
 }
