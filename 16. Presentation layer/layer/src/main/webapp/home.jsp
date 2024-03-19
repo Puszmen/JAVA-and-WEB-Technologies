@@ -33,13 +33,13 @@
 <ol>
     <c:forEach items="${applicationScope.people}" var="person">
         <li>
-                ${fn:toUpperCase(person.firstName.concat(" ").concat(person.lastName))}
+            <c:out value="${person.firstName} - ${person.lastName}"/>
             (${person.age} lat) /
                 ${person.gender == 'MALE' ? 'Mężczyzna' : 'Kobieta'}
             <c:if test="${person.age >= 18}">
                 <span style="color: green">Pełnoletni(a)</span>
             </c:if>
-            <c:if test="${person.age < 18}">
+            <c:if test="${person.age <18}">
                 <span style="color: red">Nieletni(a)</span>
             </c:if>
         </li>
