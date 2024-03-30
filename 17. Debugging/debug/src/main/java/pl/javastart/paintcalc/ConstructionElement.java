@@ -1,7 +1,6 @@
 package pl.javastart.paintcalc;
 
-public class ConstructionElement {
-
+class ConstructionElement {
     private int width;
     private int height;
 

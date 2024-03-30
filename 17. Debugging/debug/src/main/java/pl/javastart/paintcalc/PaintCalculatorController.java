@@ -8,17 +8,17 @@ import java.io.IOException;
 
 @WebServlet("/calculate")
 public class PaintCalculatorController extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Room room = getRoom(request);
         PaintDetails paintDetails = getPaintDetails(request);
         int paintAmount = PaintCalculator.calculatePaintAmount(room, paintDetails);
-        request.setAttribute("room", room);
+        request.setAttribute("paintArea", room.getPaintArea() / PaintCalculator.SQM_TO_SQCM);
         request.setAttribute("paintAmount", paintAmount);
         request.getRequestDispatcher("/result.jsp").forward(request, response);
     }
 
     private Room getRoom(HttpServletRequest request) {
-        int roomLength = Integer.parseInt(request.getParameter("roomLengt"));
+        int roomLength = Integer.parseInt(request.getParameter("roomLength"));
         int roomWidth = Integer.parseInt(request.getParameter("roomWidth"));
         int roomHeight = Integer.parseInt(request.getParameter("roomHeight"));
         ConstructionElement[] constructionElements = getConstructionElements(request);

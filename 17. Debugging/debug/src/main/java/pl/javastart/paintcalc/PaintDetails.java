@@ -1,7 +1,6 @@
 package pl.javastart.paintcalc;
 
-public class PaintDetails {
-
+class PaintDetails {
     private int coverage;
     private int coats;
 

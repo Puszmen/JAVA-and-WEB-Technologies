@@ -2,8 +2,7 @@ package pl.javastart.paintcalc;
 
 import java.util.Arrays;
 
-public class Room {
-
+class Room {
     private int width;
     private int height;
     private int length;
@@ -17,7 +16,7 @@ public class Room {
     }
 
     int getWallArea() {
-        return 2 * (width * height + length + height);
+        return 2 * (width * height + length * height);
     }
 
     int getConstructionElementsArea() {
