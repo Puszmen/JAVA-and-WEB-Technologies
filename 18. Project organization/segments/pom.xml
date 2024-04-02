@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.javastart</groupId>
-    <artifactId>debug</artifactId>
+    <artifactId>segments-hiding</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>segments</name>
+    <name>segments_hiding</name>
     <packaging>war</packaging>
 
     <properties>
@@ -19,8 +19,15 @@
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.0.0</version>
+            <version>5.0.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
+
 </project>
